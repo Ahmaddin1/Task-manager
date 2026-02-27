@@ -186,7 +186,7 @@ function Home() {
           </div>
 
           <div className="col-span-1 flex justify-center">
-            {t.desc.length > 120 && (
+            {t.desc.length > 90 && (
               <button
                 type="button"
                 onClick={() => setexpandedId(expandedId === t.id ? null : t.id)}
