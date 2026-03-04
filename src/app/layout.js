@@ -3,15 +3,16 @@ import localFont from "next/font/local";
 import { Toaster } from "@/components/ui/sonner";
 import { Providers } from "./providers";
 
-const Mluvka = localFont({
-  src: [
-    {
-      path: "../../public/fonts/my-font.otf",
-      weight: "400",
-      style: "normal",
-    },
-  ],
-  variable: "--myfont",
+const mluvka = localFont({
+  src: "../../Mluvka.otf",
+  variable: "--mluvka-font",
+  display: "swap",
+});
+
+const camood = localFont({
+  src: "../../sooner.otf",
+  variable: "--camood-font",
+  display: "swap",
 });
 
 export const metadata = {
@@ -22,7 +23,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={` ${Mluvka.variable} antialiased`}>
+      <body
+        className={`${mluvka.variable} ${camood.variable} min-h-screen bg-[#D7D7D7] font-mluvka text-black antialiased`}
+      >
         <Providers>{children}</Providers>
 
         <Toaster
